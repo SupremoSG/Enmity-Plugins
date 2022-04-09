@@ -45,7 +45,7 @@ const ClydeSpoofer: Plugin = {
     },
 
     onStop() {
-
+      this.commands = [];
     }
 }
 
