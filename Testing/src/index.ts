@@ -34,7 +34,7 @@ const ClydeSpoofer: Plugin = {
                 }
             ],
 
-            execute: function (args, message) {
+            execute: async function (args, message): Promise<void> {
                 const text = args[0].value;
                 const channel = message.channel;
 
