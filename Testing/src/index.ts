@@ -19,7 +19,7 @@ const ClydeSpoofer: Plugin = {
             displayDescription: "Send messages as Clyde.",
 
             type: ApplicationCommandType.Chat,
-            inputType: ApplicationCommandInputType.BuiltInText,
+            inputType: ApplicationCommandInputType.BuiltIn,
 
             options: [
                 {
@@ -34,11 +34,11 @@ const ClydeSpoofer: Plugin = {
                 }
             ],
 
-            execute: async function (args, message): Promise<void> {
+            execute: (args, message): void => {
                 const text = args[0].value;
                 const channel = message.channel;
 
-                return sendReply(channel.id, text);
+                sendReply(channel.id, text);
             }
         }
         this.commands.push(clydespoof);
