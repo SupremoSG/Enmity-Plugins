@@ -10,7 +10,7 @@ const ClydeSpoofer: Plugin = {
     onStart() {
         const clydespoof: Command = {
             id: "clyde-command",
-            applicationId: EnmitySectionID,
+            applicationId: EnmitySection.id,
 
             name: "clyde",
             displayName: "clyde",
