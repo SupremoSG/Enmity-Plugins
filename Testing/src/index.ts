@@ -60,8 +60,8 @@ const BotSpoofer: Plugin = {
 
             execute: (args, message): void => {
                 const bot = args[0].value;
-                const text = args[1].value;
-                const pfp = args[2].value;
+                const text = args[2].value;
+                const pfp = args[1].value;
                 const channel = message.channel;
                 const defaultpfp = 'https://www.shitpostbot.com/img/sourceimages/clyde-5e1c9d21abece.png';
                 if (bot.toLocaleLowerCase() === 'clyde'){
