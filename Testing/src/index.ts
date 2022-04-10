@@ -51,10 +51,10 @@ const BotSpoofer: Plugin = {
                 const text = args[1].value;
                 const channel = message.channel;
                 const defaultpfp = 'https://www.shitpostbot.com/img/sourceimages/clyde-5e1c9d21abece.png';
-                if (bot === 'clyde' || 'Clyde'){
+                if (bot.toLocaleLowerCase() === 'clyde'){
                     sendReply(channel.id, text, 'Clyde', defaultpfp);
                 }
-                else if(bot === 'discord' || 'Discord')
+                else if(bot.toLocaleLowerCase() === 'discord')
                 {
                     sendReply(channel.id, text, 'Discord', 'https://support.discord.com/hc/user_images/PRywUXcqg0v5DD6s7C3LyQ.jpeg');
                 }   
