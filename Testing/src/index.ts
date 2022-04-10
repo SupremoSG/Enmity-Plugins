@@ -34,6 +34,17 @@ const BotSpoofer: Plugin = {
                     required: true
                 },
                 {
+                    name: "pfp",
+                    displayName: "pfp",
+
+                    description: "Profile picture link for your custom bot. (Leave blank for default)",
+                    displayDescription: "Profile picture link for your custom bot. (Leave blank for default)",
+
+                    type: ApplicationCommandOptionType.String,
+                    required: true
+
+                },
+                {
                     name: "text",
                     displayName: "text",
 
@@ -43,18 +54,8 @@ const BotSpoofer: Plugin = {
                     type: ApplicationCommandOptionType.String,
                     required: true
 
-                },
-                {
-                    name: "pfp",
-                    displayName: "pfp",
-
-                    description: "Profile picture link for your custom bot.",
-                    displayDescription: "Profile picture link for your custom bot.",
-
-                    type: ApplicationCommandOptionType.String,
-                    required: false
-
                 }
+
             ],
 
             execute: (args, message): void => {
@@ -70,6 +71,10 @@ const BotSpoofer: Plugin = {
                 {
                     sendReply(channel.id, text, 'Discord', 'https://support.discord.com/hc/user_images/PRywUXcqg0v5DD6s7C3LyQ.jpeg');
                 }   
+                else if(pfp.toLocaleLowerCase() === '')
+                {
+                    sendReply(channel.id, text, bot, defaultpfp);
+                }
                 else
                 {
                     sendReply(channel.id, text, bot, pfp);
