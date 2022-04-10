@@ -65,20 +65,19 @@ const BotSpoofer: Plugin = {
                 if (bot === 'clyde' || 'Clyde'){
                     sendReply(channel.id, text, 'Clyde', defaultpfp);
                 }
+                else if(bot === 'discord' || 'Discord')
+                {
+                    sendReply(channel.id, text, 'Discord', 'https://support.discord.com/hc/user_images/PRywUXcqg0v5DD6s7C3LyQ.jpeg');
+                }
+                else if(pfp === '')
+                {
+                    sendReply(channel.id, text, bot, defaultpfp);
+                }   
                 else{
-                    if(bot === 'discord' || 'Discord'){
-                        sendReply(channel.id, text, 'Discord', 'https://support.discord.com/hc/user_images/PRywUXcqg0v5DD6s7C3LyQ.jpeg');
-                    }
-                    else{
-                        if(pfp === '')
-                        {
-                            sendReply(channel.id, text, bot, defaultpfp);
-                        }
-                        else{
-                            sendReply(channel.id, text, bot, pfp);
-                        }
-                    }
-              }
+                    sendReply(channel.id, text, bot, pfp);
+                }
+                    
+              
             }
         }
         this.commands.push(botspoof);
