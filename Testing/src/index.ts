@@ -39,7 +39,7 @@ const ClydeSpoofer: Plugin = {
                 const text = args[0].value;
                 const channel = message.channel;
 
-                sendReply(channel.id, text, "https://www.shitpostbot.com/img/sourceimages/clyde-5e1c9d21abece.png", "Clyde");
+                sendReply(channel.id, text, "Clyde", "https://www.shitpostbot.com/img/sourceimages/clyde-5e1c9d21abece.png");
             }
         }
         this.commands.push(clydespoof);
