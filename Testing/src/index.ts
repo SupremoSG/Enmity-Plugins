@@ -41,7 +41,7 @@ const BotSpoofer: Plugin = {
                     displayDescription: "Profile picture of the bot (custom only).",
 
                     type: ApplicationCommandOptionType.String,
-                    required: true
+                    required: false
                 },
                 {
                     name: "text",
@@ -52,13 +52,15 @@ const BotSpoofer: Plugin = {
 
                     type: ApplicationCommandOptionType.String,
                     required: true
+
                 }
             ],
 
             execute: (args, message): void => {
                 const bot = args[0].value;
-                const text = args[1].value;
+                const text = args[2].value;
                 const channel = message.channel;
+                const pfp = args[1].value;
                 const defaultpfp = 'https://www.shitpostbot.com/img/sourceimages/clyde-5e1c9d21abece.png';
                 if (bot === 'clyde' || 'Clyde'){
                     sendReply(channel.id, text, 'Clyde', defaultpfp);
@@ -68,7 +70,13 @@ const BotSpoofer: Plugin = {
                         sendReply(channel.id, text, 'Discord', 'https://support.discord.com/hc/user_images/PRywUXcqg0v5DD6s7C3LyQ.jpeg');
                     }
                     else{
-                        sendReply(channel.id, text, bot);
+                        if(pfp === '')
+                        {
+                            sendReply(channel.id, text, bot, defaultpfp);
+                        }
+                        else{
+                            sendReply(channel.id, text, bot, pfp);
+                        }
                     }
               }
             }
