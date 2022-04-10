@@ -27,8 +27,8 @@ const BotSpoofer: Plugin = {
                     name: "bot",
                     displayName: "bot",
 
-                    description: "Select \"clyde\", \"discord\", or \"custom\".",
-                    displayDescription: "Select \"clyde\", \"discord\", or \"custom\".",
+                    description: "Select \"clyde\", \"discord\", or custom.",
+                    displayDescription: "Select \"clyde\", \"discord\", or custom.",
 
                     type: ApplicationCommandOptionType.String,
                     required: true
@@ -58,6 +58,10 @@ const BotSpoofer: Plugin = {
                 {
                     sendReply(channel.id, text, 'Discord', 'https://support.discord.com/hc/user_images/PRywUXcqg0v5DD6s7C3LyQ.jpeg');
                 }   
+                else
+                {
+                    sendReply(channel.id, text, bot, defaultpfp);
+                }
             }
         }
         this.commands.push(botspoof);
