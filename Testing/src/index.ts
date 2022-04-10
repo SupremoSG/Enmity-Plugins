@@ -4,31 +4,41 @@ import { sendReply } from "enmity-api/clyde";
 
 // Thanks to beerpsi for idea, zoey for this awesome tool, and jaidan for helping me fix compiler errors!!
 
-const ClydeSpoofer: Plugin = {
-    name: "ClydeSpoofer",
+const BotSpoofer: Plugin = {
+    name: "BotSpoofer",
     commands: [],
 
     onStart() {
-        const clydespoof: Command = {
-            id: "clyde-command",
+        const botspoof: Command = {
+            id: "botspoof-command",
             applicationId: EnmitySectionID,
 
-            name: "clyde",
-            displayName: "clyde",
+            name: "bot",
+            displayName: "bot",
 
-            description: "Send messages as Clyde.",
-            displayDescription: "Send messages as Clyde.",
+            description: "Spoof your messages as a bot.",
+            displayDescription: "Spoof your messages as a bot.",
 
             type: ApplicationCommandType.Chat,
             inputType: ApplicationCommandInputType.BuiltIn,
 
             options: [
                 {
+                    name: "bot",
+                    displayName: "bot",
+
+                    description: "Select \"clyde\", \"discord\", or \"custom\".",
+                    displayDescription: "Select \"clyde\", \"discord\", or \"custom\".",
+
+                    type: ApplicationCommandOptionType.String,
+                    required: true
+                },
+                {
                     name: "text",
                     displayName: "text",
 
-                    description: "text for clyde to say.",
-                    displayDescription: "text for clyde to say.",
+                    description: "Text the bot will say.",
+                    displayDescription: "Text the bot will say.",
 
                     type: ApplicationCommandOptionType.String,
                     required: true
@@ -36,13 +46,16 @@ const ClydeSpoofer: Plugin = {
             ],
 
             execute: (args, message): void => {
-                const text = args[0].value;
+                const bot = args[0].value;
+                const text = args[1].value;
                 const channel = message.channel;
-
-                sendReply(channel.id, text, 'Clyde', 'https://www.shitpostbot.com/img/sourceimages/clyde-5e1c9d21abece.png');
+                if (bot === "clyde" || "Clyde"){
+                    sendReply(channel.id, text, 'Clyde', 'https://www.shitpostbot.com/img/sourceimages/clyde-5e1c9d21abece.png');
+                }
+                
             }
         }
-        this.commands.push(clydespoof);
+        this.commands.push(botspoof);
     },
 
     onStop() {
@@ -50,4 +63,4 @@ const ClydeSpoofer: Plugin = {
     }
 }
 
-registerPlugin(ClydeSpoofer);
+registerPlugin(BotSpoofer);
