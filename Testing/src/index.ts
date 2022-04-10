@@ -34,6 +34,16 @@ const BotSpoofer: Plugin = {
                     required: true
                 },
                 {
+                    name: "pfp",
+                    displayName: "pfp",
+
+                    description: "Profile picture of the bot (custom only).",
+                    displayDescription: "Profile picture of the bot (custom only).",
+
+                    type: ApplicationCommandOptionType.String,
+                    required: true
+                },
+                {
                     name: "text",
                     displayName: "text",
 
@@ -49,11 +59,17 @@ const BotSpoofer: Plugin = {
                 const bot = args[0].value;
                 const text = args[1].value;
                 const channel = message.channel;
-                if (bot === 'custom' || 'Custom'){
-                    sendReply(channel.id, text, bot);
+                const defaultpfp = 'https://www.shitpostbot.com/img/sourceimages/clyde-5e1c9d21abece.png';
+                if (bot === 'clyde' || 'Clyde'){
+                    sendReply(channel.id, text, 'Clyde', defaultpfp);
                 }
                 else{
-                    sendReply(channel.id, "Invalid bot name", 'BotSpoofer', 'https://www.shitpostbot.com/img/sourceimages/clyde-5e1c9d21abece.png');
+                    if(bot === 'discord' || 'Discord'){
+                        sendReply(channel.id, text, 'Discord', 'https://support.discord.com/hc/user_images/PRywUXcqg0v5DD6s7C3LyQ.jpeg');
+                    }
+                    else{
+                        sendReply(channel.id, text, bot);
+                    }
               }
             }
         }
