@@ -52,6 +52,8 @@ const BotSpoofer: Plugin = {
                 if (bot === "clyde" || "Clyde"){
                     sendReply(channel.id, text, 'Clyde', 'https://www.shitpostbot.com/img/sourceimages/clyde-5e1c9d21abece.png');
                 }
+                else
+                    sendReply(channel.id, "Invalid bot name", 'BotSpoofer');
                 
             }
         }
