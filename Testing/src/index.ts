@@ -1,4 +1,5 @@
 import { Plugin, registerPlugin } from "enmity-api/plugins";
+import { Command, EnmitySectionID, ApplicationCommandInputType, ApplicationCommandOptionType, ApplicationCommandType } from "enmity-api/commands";
 import { sendReply } from "enmity-api/clyde";
 
 // Thanks to beerpsi for idea, zoey for this awesome tool, and jaidan for helping me fix compiler errors!!
@@ -10,7 +11,7 @@ const ClydeSpoofer: Plugin = {
     onStart() {
         const clydespoof: Command = {
             id: "clyde-command",
-            applicationId: EnmitySection.id,
+            applicationId: EnmitySectionID,
 
             name: "clyde",
             displayName: "clyde",
