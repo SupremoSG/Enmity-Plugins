@@ -70,7 +70,7 @@ const BotSpoofer: Plugin = {
                 {
                     sendReply(channel.id, text, 'Discord', 'https://support.discord.com/hc/user_images/PRywUXcqg0v5DD6s7C3LyQ.jpeg');
                 }   
-                else if(defaultpfp.toLocaleLowerCase() !== null)
+                else if(pfp.toLocaleLowerCase() !== "")
                 {
                     sendReply(channel.id, text, bot, pfp);
                 }
