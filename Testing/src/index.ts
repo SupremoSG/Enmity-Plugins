@@ -49,12 +49,12 @@ const BotSpoofer: Plugin = {
                 const bot = args[0].value;
                 const text = args[1].value;
                 const channel = message.channel;
-                if (bot === 'custom' || 'Custom'){
+                if (bot === 'custom'){
                     sendReply(channel.id, text, bot);
                 }
-                else
+                else if(bot !== 'custom'){
                     sendReply(channel.id, "Invalid bot name", 'BotSpoofer', 'https://www.shitpostbot.com/img/sourceimages/clyde-5e1c9d21abece.png');
-                
+              }
             }
         }
         this.commands.push(botspoof);
