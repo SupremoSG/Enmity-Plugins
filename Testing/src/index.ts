@@ -37,8 +37,8 @@ const BotSpoofer: Plugin = {
                     name: "pfp",
                     displayName: "pfp",
 
-                    description: "Profile picture link for your custom bot. (Leave blank for default)",
-                    displayDescription: "Profile picture link for your custom bot. (Leave blank for default)",
+                    description: "Profile picture link for your custom bot. (Leave dot for default)",
+                    displayDescription: "Profile picture link for your custom bot. (Leave dot for default)",
 
                     type: ApplicationCommandOptionType.String,
                     required: true
